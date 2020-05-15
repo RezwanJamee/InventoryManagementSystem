@@ -62,8 +62,14 @@ namespace InventorySystem
 
         private void Customers_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'test_DatabaseDataSet1.Customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter.Fill(this.test_DatabaseDataSet1.Customers);
+            // TODO: This line of code loads data into the 'test_DatabaseDataSet.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this.test_DatabaseDataSet.Customers);
+
+
+        }
+
+        private void CustomersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

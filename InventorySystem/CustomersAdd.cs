@@ -18,6 +18,7 @@ namespace InventorySystem
             InitializeComponent();
         }
 
+
         public Form RefToCustomers { get; set; }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -31,9 +32,9 @@ namespace InventorySystem
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventorySystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
             conn.Open();
-            SqlCommand sc = new SqlCommand("INSERT INTO Customers VALUES('" + AddFirstNameTextBox.Text + "','" + AddSurnameTextBox.Text + "' ," + AddPhoneNumberTextBox.Text + " ,'" + AddAddressTextBox.Text + "');",conn);
+            SqlCommand sc = new SqlCommand("INSERT INTO Customers VALUES('" + AddFirstNameTextBox.Text + "','" + AddSurnameTextBox.Text + "' ," + AddPhoneNumberTextBox.Text + " ,'" + AddEmailTextBox.Text + "','" + AddAddressTextBox.Text + "');", conn);
             int n = sc.ExecuteNonQuery();
             MessageBox.Show(n + " Customer's Detail has been added");
             conn.Close();
@@ -44,5 +45,6 @@ namespace InventorySystem
         {
             this.Close();
         }
+
     }
 }
