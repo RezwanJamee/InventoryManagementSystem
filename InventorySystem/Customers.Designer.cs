@@ -42,10 +42,14 @@
             this.AddNewCustomer = new System.Windows.Forms.Button();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CustomersGridView = new System.Windows.Forms.DataGridView();
-            this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.test_DatabaseDataSet = new InventorySystem.Test_DatabaseDataSet();
             this.customersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.customersTableAdapter = new InventorySystem.Test_DatabaseDataSetTableAdapters.CustomersTableAdapter();
+            this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.customersDataSet = new InventorySystem.CustomersDataSet();
+            this.customersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.customersTableAdapter1 = new InventorySystem.CustomersDataSetTableAdapters.CustomersTableAdapter();
+            this.customersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customersDataSet1 = new InventorySystem.CustomersDataSet();
+            this.customersBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +60,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -222,7 +230,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
-            this.CustomersGridView.DataSource = this.customersBindingSource2;
+            this.CustomersGridView.DataSource = this.customersBindingSource4;
             this.CustomersGridView.Location = new System.Drawing.Point(334, 120);
             this.CustomersGridView.Name = "CustomersGridView";
             this.CustomersGridView.Size = new System.Drawing.Size(539, 286);
@@ -233,19 +241,34 @@
             // 
             this.customersBindingSource1.DataMember = "Customers";
             // 
-            // test_DatabaseDataSet
+            // customersDataSet
             // 
-            this.test_DatabaseDataSet.DataSetName = "Test_DatabaseDataSet";
-            this.test_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.customersDataSet.DataSetName = "CustomersDataSet";
+            this.customersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // customersBindingSource2
+            // customersBindingSource3
             // 
-            this.customersBindingSource2.DataMember = "Customers";
-            this.customersBindingSource2.DataSource = this.test_DatabaseDataSet;
+            this.customersBindingSource3.DataMember = "Customers";
+            this.customersBindingSource3.DataSource = this.customersDataSet;
             // 
-            // customersTableAdapter
+            // customersTableAdapter1
             // 
-            this.customersTableAdapter.ClearBeforeFill = true;
+            this.customersTableAdapter1.ClearBeforeFill = true;
+            // 
+            // customersDataSetBindingSource
+            // 
+            this.customersDataSetBindingSource.DataSource = this.customersDataSet;
+            this.customersDataSetBindingSource.Position = 0;
+            // 
+            // customersDataSet1
+            // 
+            this.customersDataSet1.DataSetName = "CustomersDataSet";
+            this.customersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customersBindingSource4
+            // 
+            this.customersBindingSource4.DataMember = "Customers";
+            this.customersBindingSource4.DataSource = this.customersDataSet1;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -295,9 +318,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test_DatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,14 +353,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private Test_DatabaseDataSet test_DatabaseDataSet;
         private System.Windows.Forms.BindingSource customersBindingSource2;
-        private Test_DatabaseDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
+        public System.Windows.Forms.DataGridView CustomersGridView;
+        private CustomersDataSet customersDataSet;
+        private System.Windows.Forms.BindingSource customersBindingSource3;
+        private CustomersDataSetTableAdapters.CustomersTableAdapter customersTableAdapter1;
+        private System.Windows.Forms.BindingSource customersDataSetBindingSource;
+        private CustomersDataSet customersDataSet1;
+        private System.Windows.Forms.BindingSource customersBindingSource4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        public System.Windows.Forms.DataGridView CustomersGridView;
     }
 }

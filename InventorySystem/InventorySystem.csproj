@@ -67,6 +67,11 @@
     <Compile Include="CustomersAdd.Designer.cs">
       <DependentUpon>CustomersAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +84,22 @@
     <Compile Include="Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVendor.Designer.cs">
+      <DependentUpon>AddVendor.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
@@ -99,27 +115,20 @@
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test_DatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Test_DatabaseDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Test_DatabaseDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Test_DatabaseDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Vendors.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vendors.Designer.cs">
       <DependentUpon>Vendors.cs</DependentUpon>
     </Compile>
+    <Compile Include="VendorsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorsDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddVendor.resx">
+      <DependentUpon>AddVendor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomersAdd.resx">
       <DependentUpon>CustomersAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +160,28 @@
     <EmbeddedResource Include="Vendors.resx">
       <DependentUpon>Vendors.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CustomersDataSet.xsc">
+      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CustomersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CustomersDataSet.xss">
+      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProductDataSet.xsc">
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProductDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductDataSet.xss">
+      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,38 +191,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Test_DatabaseDataSet.xsc">
-      <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
+    <None Include="VendorsDataSet.xsc">
+      <DependentUpon>VendorsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Test_DatabaseDataSet.xsd">
+    <None Include="VendorsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Test_DatabaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>VendorsDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Test_DatabaseDataSet.xss">
-      <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Test_DatabaseDataSet1.xsc">
-      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Test_DatabaseDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Test_DatabaseDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Test_DatabaseDataSet1.xss">
-      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Test_DatabaseDataSet2.xsc">
-      <DependentUpon>Test_DatabaseDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Test_DatabaseDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Test_DatabaseDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Test_DatabaseDataSet2.xss">
-      <DependentUpon>Test_DatabaseDataSet2.xsd</DependentUpon>
+    <None Include="VendorsDataSet.xss">
+      <DependentUpon>VendorsDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
