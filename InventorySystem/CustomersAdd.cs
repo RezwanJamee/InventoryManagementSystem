@@ -32,7 +32,7 @@ namespace InventorySystem
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventorySystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
             conn.Open();
             SqlCommand sc = new SqlCommand("INSERT INTO Customers VALUES('" + AddFirstNameTextBox.Text + "','" + AddSurnameTextBox.Text + "' ," + AddPhoneNumberTextBox.Text + " ,'" + AddEmailTextBox.Text + "','" + AddAddressTextBox.Text + "');", conn);
             int n = sc.ExecuteNonQuery();
@@ -46,5 +46,39 @@ namespace InventorySystem
             this.Close();
         }
 
+        private void EmailLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddEmailTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddCustomerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddAddressTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddPhoneNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddSurnameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddFirstNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

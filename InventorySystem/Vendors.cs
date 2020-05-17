@@ -19,10 +19,8 @@ namespace InventorySystem
 
         private void Vendors_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'test_DatabaseDataSet1.Vendors' table. You can move, or remove it, as needed.
-            this.vendorsTableAdapter.Fill(this.test_DatabaseDataSet1.Vendors);
-            // TODO: This line of code loads data into the 'testDevPDataSet1.Vendors' table. You can move, or remove it, as needed.
-            // this.vendorsTableAdapter.Fill(this.testDevPDataSet1.Vendors);
+            // TODO: This line of code loads data into the 'vendorsDataSet.Vendors' table. You can move, or remove it, as needed.
+            this.vendorsTableAdapter1.Fill(this.vendorsDataSet.Vendors);
 
         }
 
@@ -72,6 +70,12 @@ namespace InventorySystem
             DashBoardLink.Show();
             DashBoardLink.RefToLogin = this.RefToLogin;
             this.Close();
+        }
+
+        private void AddNewVendor_Click(object sender, EventArgs e)
+        {
+            AddVendor av = new AddVendor();
+            av.Show();
         }
     }
 }

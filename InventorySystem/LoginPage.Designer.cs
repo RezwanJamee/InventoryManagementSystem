@@ -34,7 +34,8 @@
             this.PasswordInput = new System.Windows.Forms.TextBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UsernameInput
@@ -96,24 +97,34 @@
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
-            // label3
+            // label4
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(505, 185);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 55);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Login";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(348, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(448, 93);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "       This is a simple version of our \r\n      Inventory Management Software\r\n   " +
+    "      Try a new way to manage";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(458, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(360, 165);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Welcome!\r\n\r\n                        \r\n";
             // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 587);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.label2);
@@ -137,7 +148,8 @@
         private System.Windows.Forms.TextBox PasswordInput;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

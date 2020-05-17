@@ -46,13 +46,14 @@
             this.testDevPDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.test_DatabaseDataSet2 = new InventorySystem.Test_DatabaseDataSet2();
-            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new InventorySystem.Test_DatabaseDataSet2TableAdapters.ProductsTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productDataSet = new InventorySystem.ProductDataSet();
+            this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new InventorySystem.ProductDataSetTableAdapters.ProductsTableAdapter();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,9 +64,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test_DatabaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -231,30 +233,12 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.DataSource = this.productsBindingSource1;
+            this.dataGridView1.DataSource = this.productsBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(373, 96);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(350, 339);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            // 
-            // test_DatabaseDataSet2
-            // 
-            this.test_DatabaseDataSet2.DataSetName = "Test_DatabaseDataSet2";
-            this.test_DatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource1
-            // 
-            this.productsBindingSource1.DataMember = "Products";
-            this.productsBindingSource1.DataSource = this.test_DatabaseDataSet2;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -273,6 +257,24 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Price per Product";
             this.dataGridViewTextBoxColumn3.HeaderText = "Price per Product";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            // 
+            // productDataSet
+            // 
+            this.productDataSet.DataSetName = "ProductDataSet";
+            this.productDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource2
+            // 
+            this.productsBindingSource2.DataMember = "Products";
+            this.productsBindingSource2.DataSource = this.productDataSet;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // Products
             // 
@@ -296,9 +298,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.test_DatabaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,11 +333,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pricePerProductDataGridViewTextBoxColumn;
-        private Test_DatabaseDataSet2 test_DatabaseDataSet2;
         private System.Windows.Forms.BindingSource productsBindingSource1;
-        private Test_DatabaseDataSet2TableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private ProductDataSet productDataSet;
+        private System.Windows.Forms.BindingSource productsBindingSource2;
+        private ProductDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
     }
 }

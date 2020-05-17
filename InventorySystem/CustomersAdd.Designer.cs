@@ -50,6 +50,7 @@
             this.AddFirstNameTextBox.Name = "AddFirstNameTextBox";
             this.AddFirstNameTextBox.Size = new System.Drawing.Size(224, 20);
             this.AddFirstNameTextBox.TabIndex = 0;
+            this.AddFirstNameTextBox.TextChanged += new System.EventHandler(this.AddFirstNameTextBox_TextChanged);
             // 
             // FirstNameLabel
             // 
@@ -58,7 +59,7 @@
             this.FirstNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstNameLabel.Location = new System.Drawing.Point(210, 137);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(91, 16);
+            this.FirstNameLabel.Size = new System.Drawing.Size(87, 16);
             this.FirstNameLabel.TabIndex = 1;
             this.FirstNameLabel.Text = "First Name:";
             this.FirstNameLabel.Click += new System.EventHandler(this.label1_Click);
@@ -70,6 +71,7 @@
             this.AddSurnameTextBox.Name = "AddSurnameTextBox";
             this.AddSurnameTextBox.Size = new System.Drawing.Size(224, 20);
             this.AddSurnameTextBox.TabIndex = 0;
+            this.AddSurnameTextBox.TextChanged += new System.EventHandler(this.AddSurnameTextBox_TextChanged);
             // 
             // SurnameLabel
             // 
@@ -78,7 +80,7 @@
             this.SurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurnameLabel.Location = new System.Drawing.Point(210, 186);
             this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(75, 16);
+            this.SurnameLabel.Size = new System.Drawing.Size(73, 16);
             this.SurnameLabel.TabIndex = 1;
             this.SurnameLabel.Text = "Surname:";
             this.SurnameLabel.Click += new System.EventHandler(this.label1_Click);
@@ -90,6 +92,7 @@
             this.AddPhoneNumberTextBox.Name = "AddPhoneNumberTextBox";
             this.AddPhoneNumberTextBox.Size = new System.Drawing.Size(224, 20);
             this.AddPhoneNumberTextBox.TabIndex = 0;
+            this.AddPhoneNumberTextBox.TextChanged += new System.EventHandler(this.AddPhoneNumberTextBox_TextChanged);
             // 
             // label2
             // 
@@ -98,7 +101,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(210, 229);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 16);
+            this.label2.Size = new System.Drawing.Size(114, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Phone Number:";
             this.label2.Click += new System.EventHandler(this.label1_Click);
@@ -110,6 +113,7 @@
             this.AddAddressTextBox.Name = "AddAddressTextBox";
             this.AddAddressTextBox.Size = new System.Drawing.Size(224, 20);
             this.AddAddressTextBox.TabIndex = 0;
+            this.AddAddressTextBox.TextChanged += new System.EventHandler(this.AddAddressTextBox_TextChanged);
             // 
             // AddressLabel
             // 
@@ -118,7 +122,7 @@
             this.AddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddressLabel.Location = new System.Drawing.Point(213, 321);
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(72, 16);
+            this.AddressLabel.Size = new System.Drawing.Size(70, 16);
             this.AddressLabel.TabIndex = 1;
             this.AddressLabel.Text = "Address:";
             this.AddressLabel.Click += new System.EventHandler(this.label1_Click);
@@ -154,9 +158,10 @@
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailLabel.Location = new System.Drawing.Point(213, 275);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(53, 16);
+            this.EmailLabel.Size = new System.Drawing.Size(51, 16);
             this.EmailLabel.TabIndex = 5;
             this.EmailLabel.Text = "Email:";
+            this.EmailLabel.Click += new System.EventHandler(this.EmailLabel_Click);
             // 
             // AddEmailTextBox
             // 
@@ -165,6 +170,7 @@
             this.AddEmailTextBox.Name = "AddEmailTextBox";
             this.AddEmailTextBox.Size = new System.Drawing.Size(224, 20);
             this.AddEmailTextBox.TabIndex = 4;
+            this.AddEmailTextBox.TextChanged += new System.EventHandler(this.AddEmailTextBox_TextChanged);
             // 
             // AddCustomerLabel
             // 
@@ -176,6 +182,7 @@
             this.AddCustomerLabel.Size = new System.Drawing.Size(241, 32);
             this.AddCustomerLabel.TabIndex = 6;
             this.AddCustomerLabel.Text = "Add new Customer:";
+            this.AddCustomerLabel.Click += new System.EventHandler(this.AddCustomerLabel_Click);
             // 
             // CustomersAdd
             // 
