@@ -24,6 +24,8 @@ namespace InventorySystem
 
         private void Products_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'test_DatabaseDataSet2.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.test_DatabaseDataSet2.Products);
             // TODO: This line of code loads data into the 'testDevPDataSet1.Products' table. You can move, or remove it, as needed.
             //this.productsTableAdapter.Fill(this.testDevPDataSet1.Products);
 

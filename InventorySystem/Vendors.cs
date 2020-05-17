@@ -19,6 +19,8 @@ namespace InventorySystem
 
         private void Vendors_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'test_DatabaseDataSet1.Vendors' table. You can move, or remove it, as needed.
+            this.vendorsTableAdapter.Fill(this.test_DatabaseDataSet1.Vendors);
             // TODO: This line of code loads data into the 'testDevPDataSet1.Vendors' table. You can move, or remove it, as needed.
             // this.vendorsTableAdapter.Fill(this.testDevPDataSet1.Vendors);
 

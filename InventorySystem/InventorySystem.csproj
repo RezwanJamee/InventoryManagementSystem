@@ -104,6 +104,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Test_DatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Test_DatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test_DatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vendors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +170,28 @@
     </None>
     <None Include="Test_DatabaseDataSet.xss">
       <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet1.xsc">
+      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Test_DatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Test_DatabaseDataSet1.xss">
+      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet2.xsc">
+      <DependentUpon>Test_DatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Test_DatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Test_DatabaseDataSet2.xss">
+      <DependentUpon>Test_DatabaseDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
