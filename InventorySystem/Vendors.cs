@@ -44,10 +44,10 @@ namespace InventorySystem
 
         private void ProductsButton_Click(object sender, EventArgs e)
         {
-            //Products ProductsLink = new Products();
-            //ProductsLink.Show();
-            //ProductsLink.RefToLogin = this.RefToLogin;
-            //this.Close();
+            Products ProductsLink = new Products();
+            ProductsLink.Show();
+            ProductsLink.RefToLogin = this.RefToLogin;
+            this.Close();
         }
         public Form RefToLogin { get; set; }
         private void LogoutButton_Click(object sender, EventArgs e)
@@ -76,6 +76,18 @@ namespace InventorySystem
         {
             AddVendor av = new AddVendor();
             av.Show();
+            av.RefToLogin = this.RefToLogin;
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Update();
         }
     }
 }

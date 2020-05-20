@@ -17,6 +17,7 @@ namespace InventorySystem
         {
             InitializeComponent();
         }
+        public Form RefToLogin { get; set; }
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
@@ -26,6 +27,9 @@ namespace InventorySystem
             int n = vc.ExecuteNonQuery();
             MessageBox.Show(n + " Vendor's Detail has been added");
             conn.Close();
+            Vendors VendorLink = new Vendors();
+            VendorLink.Show();
+            VendorLink.RefToLogin = this.RefToLogin;
             this.Close();
         }
 

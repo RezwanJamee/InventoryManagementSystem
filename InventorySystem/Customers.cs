@@ -28,8 +28,9 @@ namespace InventorySystem
         private void AddNewCustomer_Click(object sender, EventArgs e)
         {
             CustomersAdd cta = new CustomersAdd();
-            cta.RefToCustomers = this;
+            cta.RefToLogin = this.RefToLogin;
             cta.Show();
+            this.Close();
         }
         public void RefreshGrid()
         {

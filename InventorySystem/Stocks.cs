@@ -19,6 +19,8 @@ namespace InventorySystem
 
         private void Stocks_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'stocksDataSet.Stocks' table. You can move, or remove it, as needed.
+            this.stocksTableAdapter.Fill(this.stocksDataSet.Stocks);
             // TODO: This line of code loads data into the 'testDevPDataSet1.Stocks' table. You can move, or remove it, as needed.
             // this.stocksTableAdapter.Fill(this.testDevPDataSet1.Stocks);
 

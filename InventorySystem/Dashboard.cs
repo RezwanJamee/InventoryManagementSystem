@@ -58,12 +58,10 @@ namespace InventorySystem
 
         private void GoToCustomersButton_Click(object sender, EventArgs e)
         {
-            this.Close();
             Customers ct = new Customers();
             ct.RefToLogin = this.RefToLogin;
             ct.Show();
-
-
+            this.Close();
         }
 
         private void StockButton_Click(object sender, EventArgs e)

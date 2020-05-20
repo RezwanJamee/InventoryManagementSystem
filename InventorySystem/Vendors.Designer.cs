@@ -40,16 +40,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vendorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.vendorsDataSet = new InventorySystem.VendorsDataSet();
-            this.vendorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vendorsTableAdapter1 = new InventorySystem.VendorsDataSetTableAdapters.VendorsTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendorsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.vendorsDataSet = new InventorySystem.VendorsDataSet();
+            this.vendorsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.vendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vendorsTableAdapter1 = new InventorySystem.VendorsDataSetTableAdapters.VendorsTableAdapter();
             this.AddNewVendor = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -214,24 +214,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(552, 325);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // vendorsBindingSource2
-            // 
-            this.vendorsBindingSource2.DataMember = "Vendors";
-            this.vendorsBindingSource2.DataSource = this.vendorsDataSet;
-            // 
-            // vendorsDataSet
-            // 
-            this.vendorsDataSet.DataSetName = "VendorsDataSet";
-            this.vendorsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vendorsBindingSource
-            // 
-            this.vendorsBindingSource.DataMember = "Vendors";
-            // 
-            // vendorsTableAdapter1
-            // 
-            this.vendorsTableAdapter1.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -262,6 +245,24 @@
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // vendorsBindingSource2
+            // 
+            this.vendorsBindingSource2.DataMember = "Vendors";
+            this.vendorsBindingSource2.DataSource = this.vendorsDataSet;
+            // 
+            // vendorsDataSet
+            // 
+            this.vendorsDataSet.DataSetName = "VendorsDataSet";
+            this.vendorsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vendorsBindingSource
+            // 
+            this.vendorsBindingSource.DataMember = "Vendors";
+            // 
+            // vendorsTableAdapter1
+            // 
+            this.vendorsTableAdapter1.ClearBeforeFill = true;
             // 
             // AddNewVendor
             // 
