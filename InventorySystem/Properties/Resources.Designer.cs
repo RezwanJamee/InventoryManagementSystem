@@ -123,6 +123,16 @@ namespace InventorySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Search_96 {
+            get {
+                object obj = ResourceManager.GetObject("Search-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap StockedProductWithImage {
             get {
                 object obj = ResourceManager.GetObject("StockedProductWithImage", resourceCulture);
@@ -136,6 +146,26 @@ namespace InventorySystem.Properties {
         internal static System.Drawing.Bitmap StockIcon {
             get {
                 object obj = ResourceManager.GetObject("StockIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Top_Saler_leaderboard {
+            get {
+                object obj = ResourceManager.GetObject("Top_Saler_leaderboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TopProduct {
+            get {
+                object obj = ResourceManager.GetObject("TopProduct", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

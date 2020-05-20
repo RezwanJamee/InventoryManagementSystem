@@ -291,11 +291,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
