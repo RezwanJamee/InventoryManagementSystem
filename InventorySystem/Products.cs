@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace InventorySystem
 {
@@ -21,11 +22,11 @@ namespace InventorySystem
         {
 
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
         private void Products_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'productDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.productDataSet.Products);
+            // TODO: This line of code loads data into the 'productsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.productsDataSet.Products);
 
         }
 
@@ -114,6 +115,23 @@ namespace InventorySystem
             StockLink.Show();
             StockLink.RefToLogin = this.RefToLogin;
             this.Close();
+        }
+
+        private void AddNewProduct_Click(object sender, EventArgs e)
+        {
+            ProductsAdd PA = new ProductsAdd();
+            PA.Show();
+        }
+
+        private void Refreshbutton_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = "SELECT * FROM Products";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            ProductsGridView.DataSource = dt;
+            conn.Close();
         }
     }
 }

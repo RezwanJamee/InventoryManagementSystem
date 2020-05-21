@@ -389,10 +389,10 @@ namespace InventorySystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public StocksRow AddStocksRow(int Id, string Vendor_Name, string Product_Name, int Stock) {
+            public StocksRow AddStocksRow(string Vendor_Name, string Product_Name, int Stock) {
                 StocksRow rowStocksRow = ((StocksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Vendor_Name,
                         Product_Name,
                         Stock};
@@ -426,8 +426,8 @@ namespace InventorySystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnVendor_Name = base.Columns["Vendor Name"];
-                this.columnProduct_Name = base.Columns["Product Name"];
+                this.columnVendor_Name = base.Columns["Vendor_Name"];
+                this.columnProduct_Name = base.Columns["Product_Name"];
                 this.columnStock = base.Columns["Stock"];
             }
             
@@ -436,15 +436,19 @@ namespace InventorySystem {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnVendor_Name = new global::System.Data.DataColumn("Vendor Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnVendor_Name = new global::System.Data.DataColumn("Vendor_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVendor_Name);
-                this.columnProduct_Name = new global::System.Data.DataColumn("Product Name", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnProduct_Name = new global::System.Data.DataColumn("Product_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProduct_Name);
                 this.columnStock = new global::System.Data.DataColumn("Stock", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStock);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
+                this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnVendor_Name.AllowDBNull = false;
                 this.columnVendor_Name.MaxLength = 50;
@@ -796,43 +800,42 @@ namespace InventorySystem.StocksDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Stocks";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Vendor Name", "Vendor Name");
-            tableMapping.ColumnMappings.Add("Product Name", "Product Name");
+            tableMapping.ColumnMappings.Add("Vendor_Name", "Vendor_Name");
+            tableMapping.ColumnMappings.Add("Product_Name", "Product_Name");
             tableMapping.ColumnMappings.Add("Stock", "Stock");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Stocks] WHERE (([Id] = @Original_Id) AND ([Vendor Name] = @Ori" +
-                "ginal_Vendor_Name) AND ([Product Name] = @Original_Product_Name) AND ([Stock] = " +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Stocks] WHERE (([Id] = @Original_Id) AND ([Vendor_Name] = @Ori" +
+                "ginal_Vendor_Name) AND ([Product_Name] = @Original_Product_Name) AND ([Stock] = " +
                 "@Original_Stock))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Stocks] ([Id], [Vendor Name], [Product Name], [Stock]) VALUES " +
-                "(@Id, @Vendor_Name, @Product_Name, @Stock);\r\nSELECT Id, [Vendor Name], [Product " +
-                "Name], Stock FROM Stocks WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Stocks] ([Vendor_Name], [Product_Name], [Stock]) VALUES (@Vend" +
+                "or_Name, @Product_Name, @Stock);\r\nSELECT Id, Vendor_Name, Product_Name, Stock FR" +
+                "OM Stocks WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Stocks] SET [Id] = @Id, [Vendor Name] = @Vendor_Name, [Product Name] = @Product_Name, [Stock] = @Stock WHERE (([Id] = @Original_Id) AND ([Vendor Name] = @Original_Vendor_Name) AND ([Product Name] = @Original_Product_Name) AND ([Stock] = @Original_Stock));
-SELECT Id, [Vendor Name], [Product Name], Stock FROM Stocks WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Stocks] SET [Vendor_Name] = @Vendor_Name, [Product_Name] = @Product_Name, [Stock] = @Stock WHERE (([Id] = @Original_Id) AND ([Vendor_Name] = @Original_Vendor_Name) AND ([Product_Name] = @Original_Product_Name) AND ([Stock] = @Original_Stock));
+SELECT Id, Vendor_Name, Product_Name, Stock FROM Stocks WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vendor_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vendor_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Product_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Product_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stock", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stock", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -848,7 +851,7 @@ SELECT Id, [Vendor Name], [Product Name], Stock FROM Stocks WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, [Vendor Name], [Product Name], Stock FROM dbo.Stocks";
+            this._commandCollection[0].CommandText = "SELECT Id, Vendor_Name, Product_Name, Stock FROM dbo.Stocks";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -944,21 +947,20 @@ SELECT Id, [Vendor Name], [Product Name], Stock FROM Stocks WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, string Vendor_Name, string Product_Name, int Stock) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
+        public virtual int Insert(string Vendor_Name, string Product_Name, int Stock) {
             if ((Vendor_Name == null)) {
                 throw new global::System.ArgumentNullException("Vendor_Name");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Vendor_Name));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Vendor_Name));
             }
             if ((Product_Name == null)) {
                 throw new global::System.ArgumentNullException("Product_Name");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Product_Name));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Product_Name));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Stock));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Stock));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -979,35 +981,35 @@ SELECT Id, [Vendor Name], [Product Name], Stock FROM Stocks WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, string Vendor_Name, string Product_Name, int Stock, int Original_Id, string Original_Vendor_Name, string Original_Product_Name, int Original_Stock) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
+        public virtual int Update(string Vendor_Name, string Product_Name, int Stock, int Original_Id, string Original_Vendor_Name, string Original_Product_Name, int Original_Stock, int Id) {
             if ((Vendor_Name == null)) {
                 throw new global::System.ArgumentNullException("Vendor_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Vendor_Name));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Vendor_Name));
             }
             if ((Product_Name == null)) {
                 throw new global::System.ArgumentNullException("Product_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Product_Name));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Product_Name));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Stock));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Stock));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
             if ((Original_Vendor_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Vendor_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Vendor_Name));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Vendor_Name));
             }
             if ((Original_Product_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Product_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Product_Name));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Product_Name));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Stock));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Stock));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1029,7 +1031,7 @@ SELECT Id, [Vendor Name], [Product Name], Stock FROM Stocks WHERE (Id = @Id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Vendor_Name, string Product_Name, int Stock, int Original_Id, string Original_Vendor_Name, string Original_Product_Name, int Original_Stock) {
-            return this.Update(Original_Id, Vendor_Name, Product_Name, Stock, Original_Id, Original_Vendor_Name, Original_Product_Name, Original_Stock);
+            return this.Update(Vendor_Name, Product_Name, Stock, Original_Id, Original_Vendor_Name, Original_Product_Name, Original_Stock, Original_Id);
         }
     }
     

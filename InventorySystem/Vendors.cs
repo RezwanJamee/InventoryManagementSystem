@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace InventorySystem
 {
@@ -25,7 +26,7 @@ namespace InventorySystem
         }
 
 
-
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -74,10 +75,9 @@ namespace InventorySystem
 
         private void AddNewVendor_Click(object sender, EventArgs e)
         {
-            AddVendor av = new AddVendor();
+            VendorAdd av = new VendorAdd();
             av.Show();
             av.RefToLogin = this.RefToLogin;
-            this.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -87,7 +87,18 @@ namespace InventorySystem
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            dataGridView1.Update();
+            VendorsGridView.Update();
+        }
+
+        private void Refreshbutton_Click_1(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = "SELECT * FROM Vendors";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            VendorsGridView.DataSource = dt;
+            conn.Close();
         }
     }
 }

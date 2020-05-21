@@ -17,7 +17,7 @@ namespace InventorySystem
         {
             InitializeComponent();
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
         public Form RefToLogin { get; set; }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -30,7 +30,6 @@ namespace InventorySystem
             CustomersAdd cta = new CustomersAdd();
             cta.RefToLogin = this.RefToLogin;
             cta.Show();
-            this.Close();
         }
         public void RefreshGrid()
         {
@@ -82,11 +81,21 @@ namespace InventorySystem
 
         private void SearchForCustomerButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
             conn.Open();
             SqlCommand vc = new SqlCommand("Select Count(*) From Customers where First_Name ='" + CustomerSearchTextBox.Text + "' or Surname = '" + CustomerSearchTextBox.Text + "' or Address ='" + CustomerSearchTextBox.Text + "'", conn);
             int n = vc.ExecuteNonQuery();
             MessageBox.Show(n + " Customer has been searched");
+            conn.Close();
+        }
+
+        private void Refreshbutton_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = "SELECT * FROM Customers";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            CustomersGridView.DataSource = dt;
             conn.Close();
         }
     }

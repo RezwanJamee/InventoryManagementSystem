@@ -45,15 +45,19 @@
             this.dataBaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.testDevPDataSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataBaseBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductsGridView = new System.Windows.Forms.DataGridView();
+            this.productsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productDataSet = new InventorySystem.ProductDataSet();
-            this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new InventorySystem.ProductDataSetTableAdapters.ProductsTableAdapter();
+            this.Refreshbutton = new System.Windows.Forms.Button();
+            this.AddNewProduct = new System.Windows.Forms.Button();
+            this.productsDataSet = new InventorySystem.ProductsDataSet();
+            this.productsBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new InventorySystem.ProductsDataSetTableAdapters.ProductsTableAdapter();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,11 +67,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -211,77 +217,100 @@
             // 
             // dataBaseBindingSource
             // 
-            this.dataBaseBindingSource.DataMember = "DataBase";
             this.dataBaseBindingSource.DataSource = this.testDevPDataSetBindingSource;
             // 
             // dataBaseBindingSource1
             // 
-            this.dataBaseBindingSource1.DataMember = "DataBase";
             this.dataBaseBindingSource1.DataSource = this.testDevPDataSetBindingSource1;
             // 
             // dataBaseBindingSource2
             // 
-            this.dataBaseBindingSource2.DataMember = "DataBase";
             this.dataBaseBindingSource2.DataSource = this.testDevPDataSetBindingSource1;
             // 
-            // dataGridView1
+            // ProductsGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.DataSource = this.productsBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(373, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(350, 339);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            this.ProductsGridView.AllowUserToAddRows = false;
+            this.ProductsGridView.AutoGenerateColumns = false;
+            this.ProductsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.ProductsGridView.DataSource = this.productsBindingSource4;
+            this.ProductsGridView.Location = new System.Drawing.Point(412, 96);
+            this.ProductsGridView.Name = "ProductsGridView";
+            this.ProductsGridView.Size = new System.Drawing.Size(350, 339);
+            this.ProductsGridView.TabIndex = 3;
+            this.ProductsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // dataGridViewTextBoxColumn1
+            // productsBindingSource2
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Product Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Price per Product";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Price per Product";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.productsBindingSource2.DataMember = "Products";
             // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataMember = "Products";
             // 
-            // productDataSet
+            // Refreshbutton
             // 
-            this.productDataSet.DataSetName = "ProductDataSet";
-            this.productDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Refreshbutton.Location = new System.Drawing.Point(574, 455);
+            this.Refreshbutton.Name = "Refreshbutton";
+            this.Refreshbutton.Size = new System.Drawing.Size(137, 43);
+            this.Refreshbutton.TabIndex = 11;
+            this.Refreshbutton.Text = "Refresh";
+            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
             // 
-            // productsBindingSource2
+            // AddNewProduct
             // 
-            this.productsBindingSource2.DataMember = "Products";
-            this.productsBindingSource2.DataSource = this.productDataSet;
+            this.AddNewProduct.Location = new System.Drawing.Point(775, 455);
+            this.AddNewProduct.Name = "AddNewProduct";
+            this.AddNewProduct.Size = new System.Drawing.Size(137, 43);
+            this.AddNewProduct.TabIndex = 10;
+            this.AddNewProduct.Text = "Add New Product";
+            this.AddNewProduct.UseVisualStyleBackColor = true;
+            this.AddNewProduct.Click += new System.EventHandler(this.AddNewProduct_Click);
+            // 
+            // productsDataSet
+            // 
+            this.productsDataSet.DataSetName = "ProductsDataSet";
+            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource4
+            // 
+            this.productsBindingSource4.DataMember = "Products";
+            this.productsBindingSource4.DataSource = this.productsDataSet;
             // 
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Product_Name";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Product_Name";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Price_per_Product";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Price_per_Product";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 524);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Refreshbutton);
+            this.Controls.Add(this.AddNewProduct);
+            this.Controls.Add(this.ProductsGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Products";
@@ -291,12 +320,19 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDevPDataSetBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBaseBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,7 +356,7 @@
         //private TestDevPDataSetTableAdapters.DataBaseTableAdapter dataBaseTableAdapter;
         private System.Windows.Forms.BindingSource dataBaseBindingSource1;
         private System.Windows.Forms.BindingSource testDevPDataSetBindingSource2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ProductsGridView;
         private System.Windows.Forms.BindingSource dataBaseBindingSource2;
         //private TestDevPDataSet1 testDevPDataSet1;
         private System.Windows.Forms.BindingSource productsBindingSource;
@@ -332,8 +368,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private ProductDataSet productDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource2;
-        private ProductDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.Button Refreshbutton;
+        private System.Windows.Forms.Button AddNewProduct;
+        private System.Windows.Forms.BindingSource productsBindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private ProductsDataSet productsDataSet;
+        private System.Windows.Forms.BindingSource productsBindingSource4;
+        private ProductsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

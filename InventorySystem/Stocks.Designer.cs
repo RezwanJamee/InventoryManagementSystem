@@ -39,22 +39,32 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stocksDataSet = new InventorySystem.StocksDataSet();
+            this.StocksGridView = new System.Windows.Forms.DataGridView();
+            this.stocksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.stocksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.stocksTableAdapter = new InventorySystem.StocksDataSetTableAdapters.StocksTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddNewStocks = new System.Windows.Forms.Button();
+            this.stocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Refreshbutton = new System.Windows.Forms.Button();
+            this.productsDataSet = new InventorySystem.ProductsDataSet();
+            this.productsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockDataBaseFixed = new InventorySystem.StockDataBaseFixed();
+            this.stocksBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.stocksTableAdapter1 = new InventorySystem.StockDataBaseFixedTableAdapters.StocksTableAdapter();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StocksGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataBaseFixed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -195,69 +205,106 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Admin";
             // 
-            // dataGridView1
+            // StocksGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.vendorNameDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.DataSource = this.stocksBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(325, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 335);
-            this.dataGridView1.TabIndex = 4;
+            this.StocksGridView.AutoGenerateColumns = false;
+            this.StocksGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StocksGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.StocksGridView.DataSource = this.stocksBindingSource3;
+            this.StocksGridView.Location = new System.Drawing.Point(379, 78);
+            this.StocksGridView.Name = "StocksGridView";
+            this.StocksGridView.Size = new System.Drawing.Size(443, 335);
+            this.StocksGridView.TabIndex = 4;
+            // 
+            // stocksBindingSource2
+            // 
+            this.stocksBindingSource2.DataMember = "Stocks";
+            // 
+            // AddNewStocks
+            // 
+            this.AddNewStocks.Location = new System.Drawing.Point(736, 443);
+            this.AddNewStocks.Name = "AddNewStocks";
+            this.AddNewStocks.Size = new System.Drawing.Size(137, 43);
+            this.AddNewStocks.TabIndex = 6;
+            this.AddNewStocks.Text = "Add New Stocks";
+            this.AddNewStocks.UseVisualStyleBackColor = true;
+            this.AddNewStocks.Click += new System.EventHandler(this.AddNewStocks_Click);
             // 
             // stocksBindingSource
             // 
             this.stocksBindingSource.DataMember = "Stocks";
             // 
-            // stocksDataSet
+            // Refreshbutton
             // 
-            this.stocksDataSet.DataSetName = "StocksDataSet";
-            this.stocksDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Refreshbutton.Location = new System.Drawing.Point(535, 443);
+            this.Refreshbutton.Name = "Refreshbutton";
+            this.Refreshbutton.Size = new System.Drawing.Size(137, 43);
+            this.Refreshbutton.TabIndex = 9;
+            this.Refreshbutton.Text = "Refresh";
+            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
             // 
-            // stocksBindingSource1
+            // productsDataSet
             // 
-            this.stocksBindingSource1.DataMember = "Stocks";
-            this.stocksBindingSource1.DataSource = this.stocksDataSet;
+            this.productsDataSet.DataSetName = "ProductsDataSet";
+            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // stocksTableAdapter
+            // productsDataSetBindingSource
             // 
-            this.stocksTableAdapter.ClearBeforeFill = true;
+            this.productsDataSetBindingSource.DataSource = this.productsDataSet;
+            this.productsDataSetBindingSource.Position = 0;
             // 
-            // dataGridViewTextBoxColumn1
+            // stockDataBaseFixed
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.stockDataBaseFixed.DataSetName = "StockDataBaseFixed";
+            this.stockDataBaseFixed.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // vendorNameDataGridViewTextBoxColumn
+            // stocksBindingSource3
             // 
-            this.vendorNameDataGridViewTextBoxColumn.DataPropertyName = "Vendor Name";
-            this.vendorNameDataGridViewTextBoxColumn.HeaderText = "Vendor Name";
-            this.vendorNameDataGridViewTextBoxColumn.Name = "vendorNameDataGridViewTextBoxColumn";
+            this.stocksBindingSource3.DataMember = "Stocks";
+            this.stocksBindingSource3.DataSource = this.stockDataBaseFixed;
             // 
-            // dataGridViewTextBoxColumn2
+            // stocksTableAdapter1
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Product Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.stocksTableAdapter1.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Stock";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Stock";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Vendor_Name";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Vendor_Name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Product_Name";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Product_Name";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Stock";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Stock";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
             // Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 524);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Refreshbutton);
+            this.Controls.Add(this.AddNewStocks);
+            this.Controls.Add(this.StocksGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Stocks";
@@ -267,10 +314,14 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StocksGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataBaseFixed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,19 +338,35 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView StocksGridView;
         // private TestDevPDataSet1 testDevPDataSet1;
         private System.Windows.Forms.BindingSource stocksBindingSource;
         // private TestDevPDataSet1TableAdapters.StocksTableAdapter stocksTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
-        private StocksDataSet stocksDataSet;
         private System.Windows.Forms.BindingSource stocksBindingSource1;
-        private StocksDataSetTableAdapters.StocksTableAdapter stocksTableAdapter;
+        private System.Windows.Forms.Button AddNewStocks;
+        private System.Windows.Forms.Button Refreshbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn vendorNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private StocksDataSet stocksDataSet;
+        private System.Windows.Forms.BindingSource stocksBindingSource2;
+        private StocksDataSetTableAdapters.StocksTableAdapter stocksTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private ProductsDataSet productsDataSet;
+        private System.Windows.Forms.BindingSource productsDataSetBindingSource;
+        private StockDataBaseFixed stockDataBaseFixed;
+        private System.Windows.Forms.BindingSource stocksBindingSource3;
+        private StockDataBaseFixedTableAdapters.StocksTableAdapter stocksTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
     }
 }

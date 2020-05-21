@@ -39,7 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.VendorsGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +51,11 @@
             this.vendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendorsTableAdapter1 = new InventorySystem.VendorsDataSetTableAdapters.VendorsTableAdapter();
             this.AddNewVendor = new System.Windows.Forms.Button();
+            this.Refreshbutton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VendorsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource1)).BeginInit();
@@ -199,22 +200,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Admin";
             // 
-            // dataGridView1
+            // VendorsGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VendorsGridView.AutoGenerateColumns = false;
+            this.VendorsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VendorsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.addressDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.vendorsBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(337, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(552, 325);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.VendorsGridView.DataSource = this.vendorsBindingSource2;
+            this.VendorsGridView.Location = new System.Drawing.Point(337, 89);
+            this.VendorsGridView.Name = "VendorsGridView";
+            this.VendorsGridView.Size = new System.Drawing.Size(552, 325);
+            this.VendorsGridView.TabIndex = 4;
+            this.VendorsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -274,13 +275,24 @@
             this.AddNewVendor.UseVisualStyleBackColor = true;
             this.AddNewVendor.Click += new System.EventHandler(this.AddNewVendor_Click);
             // 
+            // Refreshbutton
+            // 
+            this.Refreshbutton.Location = new System.Drawing.Point(578, 458);
+            this.Refreshbutton.Name = "Refreshbutton";
+            this.Refreshbutton.Size = new System.Drawing.Size(137, 43);
+            this.Refreshbutton.TabIndex = 8;
+            this.Refreshbutton.Text = "Refresh";
+            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click_1);
+            // 
             // Vendors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 524);
+            this.Controls.Add(this.Refreshbutton);
             this.Controls.Add(this.AddNewVendor);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.VendorsGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Vendors";
@@ -290,7 +302,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VendorsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsBindingSource1)).EndInit();
@@ -311,7 +323,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView VendorsGridView;
         // private TestDevPDataSet1 testDevPDataSet1;
         private System.Windows.Forms.BindingSource vendorsBindingSource;
         // private TestDevPDataSet1TableAdapters.VendorsTableAdapter vendorsTableAdapter;
@@ -330,5 +342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button AddNewVendor;
+        private System.Windows.Forms.Button Refreshbutton;
     }
 }

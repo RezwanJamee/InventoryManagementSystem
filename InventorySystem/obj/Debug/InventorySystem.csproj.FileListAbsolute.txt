@@ -45,4 +45,6 @@ C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySys
 C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\obj\Debug\InventorySystem.csproj.CoreCompileInputs.cache
 C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\obj\Debug\InventorySystem.exe
 C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\obj\Debug\InventorySystem.pdb
-C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\obj\Debug\InventorySystem.AddVendor.resources
+C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\obj\Debug\InventorySystem.StocksAdd.resources
+C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\obj\Debug\InventorySystem.VendorAdd.resources
+C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\obj\Debug\InventorySystem.ProductsAdd.resources

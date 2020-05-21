@@ -57,6 +57,7 @@
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Refreshbutton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -320,11 +321,22 @@
             // 
             this.customersBindingSource1.DataMember = "Customers";
             // 
+            // Refreshbutton
+            // 
+            this.Refreshbutton.Location = new System.Drawing.Point(534, 455);
+            this.Refreshbutton.Name = "Refreshbutton";
+            this.Refreshbutton.Size = new System.Drawing.Size(137, 43);
+            this.Refreshbutton.TabIndex = 7;
+            this.Refreshbutton.Text = "Refresh";
+            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
+            // 
             // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 524);
+            this.Controls.Add(this.Refreshbutton);
             this.Controls.Add(this.SearchForCustomerButton);
             this.Controls.Add(this.CustomerSearchTextBox);
             this.Controls.Add(this.CustomersGridView);
@@ -391,5 +403,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.TextBox CustomerSearchTextBox;
         private System.Windows.Forms.Button SearchForCustomerButton;
+        private System.Windows.Forms.Button Refreshbutton;
     }
 }

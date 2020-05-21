@@ -38,9 +38,6 @@ namespace InventorySystem
             int n = sc.ExecuteNonQuery();
             MessageBox.Show(n + " Customer's Detail has been added");
             conn.Close();
-            Customers ct = new Customers();
-            ct.RefToLogin = this.RefToLogin;
-            ct.Show();
             this.Close();
         }
 

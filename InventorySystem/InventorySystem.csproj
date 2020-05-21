@@ -84,22 +84,44 @@
     <Compile Include="Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddVendor.cs">
+    <Compile Include="ProductsAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddVendor.Designer.cs">
-      <DependentUpon>AddVendor.cs</DependentUpon>
+    <Compile Include="ProductsAdd.Designer.cs">
+      <DependentUpon>ProductsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockDataBaseFixed.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockDataBaseFixed.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StocksAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StocksAdd.Designer.cs">
+      <DependentUpon>StocksAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocksDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VendorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorAdd.Designer.cs">
+      <DependentUpon>VendorAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
@@ -115,11 +137,6 @@
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="StocksDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StocksDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Vendors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,8 +148,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VendorsDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddVendor.resx">
-      <DependentUpon>AddVendor.cs</DependentUpon>
+    <EmbeddedResource Include="ProductsAdd.resx">
+      <DependentUpon>ProductsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocksAdd.resx">
+      <DependentUpon>StocksAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorAdd.resx">
+      <DependentUpon>VendorAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomersAdd.resx">
       <DependentUpon>CustomersAdd.cs</DependentUpon>
@@ -176,16 +199,16 @@
     <None Include="CustomersDataSet.xss">
       <DependentUpon>CustomersDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ProductDataSet.xsc">
-      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    <None Include="ProductsDataSet1.xsc">
+      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="ProductDataSet.xsd">
+    <None Include="ProductsDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProductDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProductsDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ProductDataSet.xss">
-      <DependentUpon>ProductDataSet.xsd</DependentUpon>
+    <None Include="ProductsDataSet1.xss">
+      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -196,6 +219,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StockDataBaseFixed.xsc">
+      <DependentUpon>StockDataBaseFixed.xsd</DependentUpon>
+    </None>
+    <None Include="StockDataBaseFixed.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockDataBaseFixed.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockDataBaseFixed.xss">
+      <DependentUpon>StockDataBaseFixed.xsd</DependentUpon>
+    </None>
     <None Include="StocksDataSet.xsc">
       <DependentUpon>StocksDataSet.xsd</DependentUpon>
     </None>

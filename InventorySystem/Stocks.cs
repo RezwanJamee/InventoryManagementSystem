@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace InventorySystem
 {
@@ -16,9 +17,13 @@ namespace InventorySystem
         {
             InitializeComponent();
         }
-
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
         private void Stocks_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'stockDataBaseFixed.Stocks' table. You can move, or remove it, as needed.
+            this.stocksTableAdapter1.Fill(this.stockDataBaseFixed.Stocks);
+            // TODO: This line of code loads data into the 'stocksDataSet.Stocks' table. You can move, or remove it, as needed.
+            this.stocksTableAdapter.Fill(this.stocksDataSet.Stocks);
             // TODO: This line of code loads data into the 'stocksDataSet.Stocks' table. You can move, or remove it, as needed.
             this.stocksTableAdapter.Fill(this.stocksDataSet.Stocks);
             // TODO: This line of code loads data into the 'testDevPDataSet1.Stocks' table. You can move, or remove it, as needed.
@@ -49,10 +54,10 @@ namespace InventorySystem
 
         private void ProductsButton_Click(object sender, EventArgs e)
         {
-            ////Products ProductsLink = new Products();
-            //ProductsLink.Show();
-            //ProductsLink.RefToLogin = this.RefToLogin;
-            //this.Close();
+            Products ProductsLink = new Products();
+            ProductsLink.Show();
+            ProductsLink.RefToLogin = this.RefToLogin;
+            this.Close();
         }
 
         private void VendorsButton_Click(object sender, EventArgs e)
@@ -77,6 +82,23 @@ namespace InventorySystem
             DashBoardLink.Show();
             DashBoardLink.RefToLogin = this.RefToLogin;
             this.Close();
+        }
+
+        private void AddNewStocks_Click(object sender, EventArgs e)
+        {
+            StocksAdd sa = new StocksAdd();
+            sa.Show();
+        }
+
+        private void Refreshbutton_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            String query = "SELECT * FROM Stocks";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            StocksGridView.DataSource = dt;
+            conn.Close();
         }
     }
 }
