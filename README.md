@@ -8,6 +8,7 @@ The project is based on few pages:
 4. Stocks
 5. Vendors 
 6. Customers
+
 The last 4 pages interact with the inventory database where you can add, remove, update or delete items from database. 
 
 ### UI preview
