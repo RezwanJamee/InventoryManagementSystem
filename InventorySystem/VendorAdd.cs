@@ -21,13 +21,20 @@ namespace InventorySystem
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
             conn.Open();
-            SqlCommand vc = new SqlCommand("INSERT INTO Vendors VALUES('" + AddVendorNameTextBox.Text + "','" + AddEmailTextBox.Text + "'," + AddPhoneNumberTextBox.Text + " ,'" + AddAddressTextBox.Text + "');", conn);
-            int n = vc.ExecuteNonQuery();
-            MessageBox.Show(n + " Vendor's Detail has been added");
-            conn.Close();
-            this.Close();
+            SqlCommand vc = new SqlCommand("INSERT INTO Vendors VALUES('" + AddVendorNameTextBox.Text + "','" + Stocks.Text + "','" + AddEmailTextBox.Text + "'," + AddPhoneNumberTextBox.Text + " ,'" + AddAddressTextBox.Text + "');", conn);
+            if (String.IsNullOrEmpty(AddVendorNameTextBox.Text) | String.IsNullOrEmpty(Stocks.Text) | String.IsNullOrEmpty(AddEmailTextBox.Text) | String.IsNullOrEmpty(AddPhoneNumberTextBox.Text) | String.IsNullOrEmpty(AddAddressTextBox.Text))
+            {
+                MessageBox.Show("Please check that you have inserted the information correctly");
+            }
+            else
+            {
+                int n = vc.ExecuteNonQuery();
+                MessageBox.Show(n + " Vendor's Detail has been added");
+                conn.Close();
+                this.Close();
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -76,6 +83,21 @@ namespace InventorySystem
         }
 
         private void AddVendorNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VendorAdd_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Stocks_TextChanged(object sender, EventArgs e)
         {
 
         }

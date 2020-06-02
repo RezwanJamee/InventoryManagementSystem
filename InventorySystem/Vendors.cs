@@ -20,13 +20,17 @@ namespace InventorySystem
 
         private void Vendors_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vendorsUpdated.Vendors' table. You can move, or remove it, as needed.
+            this.vendorsTableAdapter2.Fill(this.vendorsUpdated.Vendors);
+            // TODO: This line of code loads data into the 'test_DatabaseDataSet1.Vendors' table. You can move, or remove it, as needed.
+            this.vendorsTableAdapter.Fill(this.test_DatabaseDataSet1.Vendors);
             // TODO: This line of code loads data into the 'vendorsDataSet.Vendors' table. You can move, or remove it, as needed.
             this.vendorsTableAdapter1.Fill(this.vendorsDataSet.Vendors);
 
         }
 
 
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -53,7 +57,8 @@ namespace InventorySystem
         public Form RefToLogin { get; set; }
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            this.RefToLogin.Show();
+            LoginPage LP = new LoginPage();
+            LP.Show();
             this.Close();
         }
 
@@ -99,6 +104,21 @@ namespace InventorySystem
             SDA.Fill(dt);
             VendorsGridView.DataSource = dt;
             conn.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Graphs GraphLink = new Graphs();
+            GraphLink.Show();
+            GraphLink.RefToLogin = this.RefToLogin;
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Edit_Credentials Change_Pass = new Edit_Credentials();
+            Change_Pass.Show();
+            this.Close();
         }
     }
 }

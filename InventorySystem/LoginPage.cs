@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Data.Entity;
 
 namespace InventorySystem
 {
@@ -39,8 +41,7 @@ namespace InventorySystem
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
             // Counts how many matches
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username ='" + UsernameInput.Text + "' and Password = '" + PasswordInput.Text + "'", con);

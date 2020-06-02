@@ -17,7 +17,7 @@ namespace InventorySystem
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
         public Form RefToLogin { get; set; }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -67,6 +67,8 @@ namespace InventorySystem
 
         private void Customers_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'customerTable.Customers' table. You can move, or remove it, as needed.
+            this.customersTableAdapter.Fill(this.customerTable.Customers);
             // TODO: This line of code loads data into the 'customersDataSet.Customers' table. You can move, or remove it, as needed.
             this.customersTableAdapter1.Fill(this.customersDataSet.Customers);
 
@@ -97,6 +99,26 @@ namespace InventorySystem
             SDA.Fill(dt);
             CustomersGridView.DataSource = dt;
             conn.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Graphs GraphLink = new Graphs();
+            GraphLink.RefToLogin = this.RefToLogin;
+            GraphLink.Show();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Edit_Credentials Change_Pass = new Edit_Credentials();
+            Change_Pass.Show();
+            this.Close();
+        }
+
+        private void ProductsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

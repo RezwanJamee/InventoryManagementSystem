@@ -35,17 +35,22 @@
             this.StocksButton = new System.Windows.Forms.Button();
             this.VendorsButton = new System.Windows.Forms.Button();
             this.CustomersButton = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.AddNewCustomer = new System.Windows.Forms.Button();
             this.CustomersGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Products = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customersBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
+            this.customerTable = new InventorySystem.CustomerTable();
+            this.customersBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.customersDataSet = new InventorySystem.CustomersDataSet();
             this.customersBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
@@ -53,20 +58,27 @@
             this.customersTableAdapter1 = new InventorySystem.CustomersDataSetTableAdapters.CustomersTableAdapter();
             this.customersDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CustomerSearchTextBox = new System.Windows.Forms.TextBox();
+            this.customersBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.customersTableAdapter = new InventorySystem.CustomerTableTableAdapters.CustomersTableAdapter();
+            this.Refreshbutton = new System.Windows.Forms.Button();
             this.SearchForCustomerButton = new System.Windows.Forms.Button();
+            this.AddNewCustomer = new System.Windows.Forms.Button();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Refreshbutton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).BeginInit();
@@ -81,11 +93,12 @@
             this.flowLayoutPanel1.Controls.Add(this.StocksButton);
             this.flowLayoutPanel1.Controls.Add(this.VendorsButton);
             this.flowLayoutPanel1.Controls.Add(this.CustomersButton);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Controls.Add(this.LogoutButton);
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 71);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 537);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -118,6 +131,7 @@
             this.ProductsButton.TabIndex = 1;
             this.ProductsButton.Text = "           PRODUCTS";
             this.ProductsButton.UseVisualStyleBackColor = false;
+            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
             // 
             // StocksButton
             // 
@@ -165,6 +179,21 @@
             this.CustomersButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CustomersButton.UseVisualStyleBackColor = false;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::InventorySystem.Properties.Resources.ProductsIcon;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(3, 368);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(206, 67);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "     TRENDS\r\n    (GRAPHS)";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // LogoutButton
             // 
             this.LogoutButton.BackColor = System.Drawing.Color.White;
@@ -172,7 +201,7 @@
             this.LogoutButton.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutButton.Image = global::InventorySystem.Properties.Resources.LogOutIcon;
             this.LogoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LogoutButton.Location = new System.Drawing.Point(3, 368);
+            this.LogoutButton.Location = new System.Drawing.Point(3, 441);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.Size = new System.Drawing.Size(206, 69);
             this.LogoutButton.TabIndex = 5;
@@ -183,41 +212,44 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(937, 64);
+            this.panel1.Size = new System.Drawing.Size(1170, 64);
             this.panel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(237, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(328, 55);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "CUSTOMERS";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::InventorySystem.Properties.Resources.Admin_Img;
-            this.pictureBox1.Location = new System.Drawing.Point(856, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(1101, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 42);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(786, 24);
+            this.label1.Location = new System.Drawing.Point(1035, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Admin";
-            // 
-            // AddNewCustomer
-            // 
-            this.AddNewCustomer.Location = new System.Drawing.Point(763, 455);
-            this.AddNewCustomer.Name = "AddNewCustomer";
-            this.AddNewCustomer.Size = new System.Drawing.Size(137, 43);
-            this.AddNewCustomer.TabIndex = 3;
-            this.AddNewCustomer.Text = "Add New Customer";
-            this.AddNewCustomer.UseVisualStyleBackColor = true;
-            this.AddNewCustomer.Click += new System.EventHandler(this.AddNewCustomer_Click);
             // 
             // CustomersGridView
             // 
@@ -226,13 +258,14 @@
             this.CustomersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
+            this.Products,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
-            this.CustomersGridView.DataSource = this.customersBindingSource3;
-            this.CustomersGridView.Location = new System.Drawing.Point(334, 120);
+            this.CustomersGridView.DataSource = this.customersBindingSource7;
+            this.CustomersGridView.Location = new System.Drawing.Point(352, 159);
             this.CustomersGridView.Name = "CustomersGridView";
-            this.CustomersGridView.Size = new System.Drawing.Size(539, 286);
+            this.CustomersGridView.Size = new System.Drawing.Size(644, 315);
             this.CustomersGridView.TabIndex = 4;
             this.CustomersGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomersGridView_CellContentClick);
             // 
@@ -247,6 +280,14 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Surname";
             this.dataGridViewTextBoxColumn6.HeaderText = "Surname";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // Products
+            // 
+            this.Products.DataPropertyName = "Stocks";
+            this.Products.HeaderText = "Products";
+            this.Products.Name = "Products";
+            this.Products.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Products.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -265,6 +306,21 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Address";
             this.dataGridViewTextBoxColumn9.HeaderText = "Address";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // customersBindingSource7
+            // 
+            this.customersBindingSource7.DataMember = "Customers";
+            this.customersBindingSource7.DataSource = this.customerTable;
+            // 
+            // customerTable
+            // 
+            this.customerTable.DataSetName = "CustomerTable";
+            this.customerTable.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // customersBindingSource6
+            // 
+            this.customersBindingSource6.DataMember = "Customers";
+            this.customersBindingSource6.DataSource = this.customerTable;
             // 
             // customersBindingSource3
             // 
@@ -297,21 +353,59 @@
             // 
             // CustomerSearchTextBox
             // 
-            this.CustomerSearchTextBox.Location = new System.Drawing.Point(666, 71);
+            this.CustomerSearchTextBox.Location = new System.Drawing.Point(940, 76);
             this.CustomerSearchTextBox.Name = "CustomerSearchTextBox";
             this.CustomerSearchTextBox.Size = new System.Drawing.Size(186, 20);
             this.CustomerSearchTextBox.TabIndex = 5;
+            // 
+            // customersBindingSource5
+            // 
+            this.customersBindingSource5.DataMember = "Customers";
+            this.customersBindingSource5.DataSource = this.customersDataSet;
+            // 
+            // customersTableAdapter
+            // 
+            this.customersTableAdapter.ClearBeforeFill = true;
+            // 
+            // Refreshbutton
+            // 
+            this.Refreshbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Refreshbutton.ForeColor = System.Drawing.Color.Gray;
+            this.Refreshbutton.Image = global::InventorySystem.Properties.Resources.Refresh;
+            this.Refreshbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Refreshbutton.Location = new System.Drawing.Point(386, 514);
+            this.Refreshbutton.Name = "Refreshbutton";
+            this.Refreshbutton.Size = new System.Drawing.Size(168, 55);
+            this.Refreshbutton.TabIndex = 7;
+            this.Refreshbutton.Text = "Refresh";
+            this.Refreshbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
             // 
             // SearchForCustomerButton
             // 
             this.SearchForCustomerButton.BackgroundImage = global::InventorySystem.Properties.Resources.Search_96;
             this.SearchForCustomerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SearchForCustomerButton.Location = new System.Drawing.Point(858, 66);
+            this.SearchForCustomerButton.Location = new System.Drawing.Point(1132, 72);
             this.SearchForCustomerButton.Name = "SearchForCustomerButton";
-            this.SearchForCustomerButton.Size = new System.Drawing.Size(31, 30);
+            this.SearchForCustomerButton.Size = new System.Drawing.Size(31, 26);
             this.SearchForCustomerButton.TabIndex = 6;
             this.SearchForCustomerButton.UseVisualStyleBackColor = true;
             this.SearchForCustomerButton.Click += new System.EventHandler(this.SearchForCustomerButton_Click);
+            // 
+            // AddNewCustomer
+            // 
+            this.AddNewCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewCustomer.ForeColor = System.Drawing.Color.Gray;
+            this.AddNewCustomer.Image = global::InventorySystem.Properties.Resources.Plus_math_961;
+            this.AddNewCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddNewCustomer.Location = new System.Drawing.Point(706, 514);
+            this.AddNewCustomer.Name = "AddNewCustomer";
+            this.AddNewCustomer.Size = new System.Drawing.Size(290, 55);
+            this.AddNewCustomer.TabIndex = 3;
+            this.AddNewCustomer.Text = "Add New Customer";
+            this.AddNewCustomer.UseVisualStyleBackColor = true;
+            this.AddNewCustomer.Click += new System.EventHandler(this.AddNewCustomer_Click);
             // 
             // customersBindingSource
             // 
@@ -321,21 +415,11 @@
             // 
             this.customersBindingSource1.DataMember = "Customers";
             // 
-            // Refreshbutton
-            // 
-            this.Refreshbutton.Location = new System.Drawing.Point(534, 455);
-            this.Refreshbutton.Name = "Refreshbutton";
-            this.Refreshbutton.Size = new System.Drawing.Size(137, 43);
-            this.Refreshbutton.TabIndex = 7;
-            this.Refreshbutton.Text = "Refresh";
-            this.Refreshbutton.UseVisualStyleBackColor = true;
-            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
-            // 
             // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 524);
+            this.ClientSize = new System.Drawing.Size(1173, 704);
             this.Controls.Add(this.Refreshbutton);
             this.Controls.Add(this.SearchForCustomerButton);
             this.Controls.Add(this.CustomerSearchTextBox);
@@ -344,18 +428,22 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Customers";
-            this.Text = "Form2";
+            this.Text = "Customers";
             this.Load += new System.EventHandler(this.Customers_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource1)).EndInit();
@@ -396,13 +484,21 @@
         private System.Windows.Forms.BindingSource customersDataSetBindingSource;
         private CustomersDataSet customersDataSet1;
         private System.Windows.Forms.BindingSource customersBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.TextBox CustomerSearchTextBox;
         private System.Windows.Forms.Button SearchForCustomerButton;
         private System.Windows.Forms.Button Refreshbutton;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingSource customersBindingSource5;
+        private CustomerTable customerTable;
+        private System.Windows.Forms.BindingSource customersBindingSource6;
+        private CustomerTableTableAdapters.CustomersTableAdapter customersTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource customersBindingSource7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Products;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

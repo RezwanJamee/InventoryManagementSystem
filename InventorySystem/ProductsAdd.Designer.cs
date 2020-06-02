@@ -123,6 +123,7 @@
             this.Controls.Add(this.AddPriceTextBox);
             this.Name = "ProductsAdd";
             this.Text = "ProductsAdd";
+            this.Load += new System.EventHandler(this.ProductsAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

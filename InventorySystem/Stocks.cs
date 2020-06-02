@@ -17,17 +17,17 @@ namespace InventorySystem
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
         private void Stocks_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'stockDataBaseFixed.Stocks' table. You can move, or remove it, as needed.
             this.stocksTableAdapter1.Fill(this.stockDataBaseFixed.Stocks);
             // TODO: This line of code loads data into the 'stocksDataSet.Stocks' table. You can move, or remove it, as needed.
-            this.stocksTableAdapter.Fill(this.stocksDataSet.Stocks);
+            /*this.stocksTableAdapter.Fill(this.stocksDataSet.Stocks);
             // TODO: This line of code loads data into the 'stocksDataSet.Stocks' table. You can move, or remove it, as needed.
             this.stocksTableAdapter.Fill(this.stocksDataSet.Stocks);
             // TODO: This line of code loads data into the 'testDevPDataSet1.Stocks' table. You can move, or remove it, as needed.
-            // this.stocksTableAdapter.Fill(this.testDevPDataSet1.Stocks);
+            // this.stocksTableAdapter.Fill(this.testDevPDataSet1.Stocks);*/
 
         }
 
@@ -99,6 +99,31 @@ namespace InventorySystem
             SDA.Fill(dt);
             StocksGridView.DataSource = dt;
             conn.Close();
+        }
+
+        private void StocksGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Graphs GraphLink = new Graphs();
+            GraphLink.Show();
+            GraphLink.RefToLogin = this.RefToLogin;
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Edit_Credentials Change_Pass = new Edit_Credentials();
+            Change_Pass.Show();
+            this.Close();
         }
     }
 }
