@@ -39,6 +39,8 @@
             this.AddAddressTextBox = new System.Windows.Forms.TextBox();
             this.AddPhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.AddVendorNameTextBox = new System.Windows.Forms.TextBox();
+            this.Stocks = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // AddVendorLabel
@@ -58,7 +60,7 @@
             this.EmailLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLabel.Location = new System.Drawing.Point(231, 171);
+            this.EmailLabel.Location = new System.Drawing.Point(231, 142);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(51, 16);
             this.EmailLabel.TabIndex = 18;
@@ -68,7 +70,7 @@
             // AddEmailTextBox
             // 
             this.AddEmailTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddEmailTextBox.Location = new System.Drawing.Point(348, 170);
+            this.AddEmailTextBox.Location = new System.Drawing.Point(348, 142);
             this.AddEmailTextBox.Name = "AddEmailTextBox";
             this.AddEmailTextBox.Size = new System.Drawing.Size(224, 20);
             this.AddEmailTextBox.TabIndex = 17;
@@ -127,7 +129,7 @@
             this.VendorNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.VendorNameLabel.AutoSize = true;
             this.VendorNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VendorNameLabel.Location = new System.Drawing.Point(228, 122);
+            this.VendorNameLabel.Location = new System.Drawing.Point(228, 101);
             this.VendorNameLabel.Name = "VendorNameLabel";
             this.VendorNameLabel.Size = new System.Drawing.Size(107, 16);
             this.VendorNameLabel.TabIndex = 14;
@@ -155,17 +157,40 @@
             // AddVendorNameTextBox
             // 
             this.AddVendorNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AddVendorNameTextBox.Location = new System.Drawing.Point(348, 121);
+            this.AddVendorNameTextBox.Location = new System.Drawing.Point(348, 101);
             this.AddVendorNameTextBox.Name = "AddVendorNameTextBox";
             this.AddVendorNameTextBox.Size = new System.Drawing.Size(224, 20);
             this.AddVendorNameTextBox.TabIndex = 10;
             this.AddVendorNameTextBox.TextChanged += new System.EventHandler(this.AddVendorNameTextBox_TextChanged);
+            // 
+            // Stocks
+            // 
+            this.Stocks.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Stocks.Location = new System.Drawing.Point(348, 186);
+            this.Stocks.Name = "Stocks";
+            this.Stocks.Size = new System.Drawing.Size(224, 20);
+            this.Stocks.TabIndex = 20;
+            this.Stocks.TextChanged += new System.EventHandler(this.Stocks_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(231, 186);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Stocks:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // VendorAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Stocks);
             this.Controls.Add(this.AddVendorLabel);
             this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.AddEmailTextBox);
@@ -179,6 +204,7 @@
             this.Controls.Add(this.AddVendorNameTextBox);
             this.Name = "VendorAdd";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.VendorAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +223,7 @@
         private System.Windows.Forms.TextBox AddAddressTextBox;
         private System.Windows.Forms.TextBox AddPhoneNumberTextBox;
         private System.Windows.Forms.TextBox AddVendorNameTextBox;
+        private System.Windows.Forms.TextBox Stocks;
+        private System.Windows.Forms.Label label1;
     }
 }

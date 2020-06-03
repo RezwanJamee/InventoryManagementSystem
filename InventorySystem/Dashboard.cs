@@ -52,8 +52,10 @@ namespace InventorySystem
 
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            this.RefToLogin.Show();
+            LoginPage LP = new LoginPage();
+            LP.Show();
             this.Close();
+
         }
 
         private void GoToCustomersButton_Click(object sender, EventArgs e)
@@ -87,6 +89,26 @@ namespace InventorySystem
             ProductsLink.Show();
             ProductsLink.RefToLogin = this.RefToLogin;
              this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Edit_Credentials Change_Pass = new Edit_Credentials();
+            Change_Pass.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Graphs GraphLink = new Graphs();
+            GraphLink.Show();
+            GraphLink.RefToLogin = this.RefToLogin;
+            this.Close();
+        }
+
+        private void CustomerNo2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

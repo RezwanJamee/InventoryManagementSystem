@@ -32,13 +32,20 @@ namespace InventorySystem
 
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ken\Desktop\Com_sci\SWE20001\DHD\InventoryManagementSystem\InventorySystem\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Test_Database.mdf;Integrated Security=True;Connect Timeout=30");
             conn.Open();
-            SqlCommand sc = new SqlCommand("INSERT INTO Customers VALUES('" + AddFirstNameTextBox.Text + "','" + AddSurnameTextBox.Text + "' ," + AddPhoneNumberTextBox.Text + " ,'" + AddEmailTextBox.Text + "','" + AddAddressTextBox.Text + "');", conn);
-            int n = sc.ExecuteNonQuery();
-            MessageBox.Show(n + " Customer's Detail has been added");
-            conn.Close();
-            this.Close();
+            SqlCommand sc = new SqlCommand("INSERT INTO Customers VALUES('" + AddFirstNameTextBox.Text + "','" + AddSurnameTextBox.Text + "' ,'" + Addstocks_textbox.Text + "' ,'" + AddPhoneNumberTextBox.Text + "' ,'" + AddEmailTextBox.Text + "','" + AddAddressTextBox.Text + "');", conn);
+            if (String.IsNullOrEmpty(AddFirstNameTextBox.Text) | String.IsNullOrEmpty(AddSurnameTextBox.Text) | String.IsNullOrEmpty(AddPhoneNumberTextBox.Text.ToString()) | String.IsNullOrEmpty(AddEmailTextBox.Text) | String.IsNullOrEmpty(AddAddressTextBox.Text))
+            {
+                MessageBox.Show("Please check that you have inserted the information correctly");
+            }
+            else
+            {
+                int n = sc.ExecuteNonQuery();// need to change the query so that i can accept the stock table as well
+                MessageBox.Show(n + " Customer's Detail has been added");
+                conn.Close();
+                this.Close();
+            }  
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -77,6 +84,11 @@ namespace InventorySystem
         }
 
         private void AddFirstNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

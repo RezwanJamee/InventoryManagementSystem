@@ -35,36 +35,38 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.StocksGridView = new System.Windows.Forms.DataGridView();
-            this.stocksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.stocksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.AddNewStocks = new System.Windows.Forms.Button();
-            this.stocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Refreshbutton = new System.Windows.Forms.Button();
-            this.productsDataSet = new InventorySystem.ProductsDataSet();
-            this.productsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stockDataBaseFixed = new InventorySystem.StockDataBaseFixed();
-            this.stocksBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.stocksTableAdapter1 = new InventorySystem.StockDataBaseFixedTableAdapters.StocksTableAdapter();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stocksBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.stockDataBaseFixed = new InventorySystem.StockDataBaseFixed();
+            this.AddNewStocks = new System.Windows.Forms.Button();
+            this.Refreshbutton = new System.Windows.Forms.Button();
+            this.productsDataSet = new InventorySystem.ProductsDataSet();
+            this.productsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stocksTableAdapter1 = new InventorySystem.StockDataBaseFixedTableAdapters.StocksTableAdapter();
+            this.stocksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.stocksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.stocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StocksGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataBaseFixed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataBaseFixed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -76,11 +78,12 @@
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Controls.Add(this.button6);
             this.flowLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 73);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 550);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // button1
@@ -161,6 +164,21 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.CustomersButton_Click);
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.White;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::InventorySystem.Properties.Resources.ProductsIcon;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(3, 368);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(206, 67);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "     TRENDS\r\n    (GRAPHS)";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.White;
@@ -168,7 +186,7 @@
             this.button6.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::InventorySystem.Properties.Resources.LogOutIcon;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 368);
+            this.button6.Location = new System.Drawing.Point(3, 441);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(206, 69);
             this.button6.TabIndex = 5;
@@ -179,31 +197,45 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(937, 64);
+            this.panel1.Size = new System.Drawing.Size(1171, 64);
             this.panel1.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(261, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 55);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Stocks";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::InventorySystem.Properties.Resources.Admin_Img;
-            this.pictureBox1.Location = new System.Drawing.Point(856, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(1101, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 42);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(786, 24);
+            this.label1.Location = new System.Drawing.Point(1035, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Admin";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // StocksGridView
             // 
@@ -215,62 +247,11 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.StocksGridView.DataSource = this.stocksBindingSource3;
-            this.StocksGridView.Location = new System.Drawing.Point(379, 78);
+            this.StocksGridView.Location = new System.Drawing.Point(473, 139);
             this.StocksGridView.Name = "StocksGridView";
             this.StocksGridView.Size = new System.Drawing.Size(443, 335);
             this.StocksGridView.TabIndex = 4;
-            // 
-            // stocksBindingSource2
-            // 
-            this.stocksBindingSource2.DataMember = "Stocks";
-            // 
-            // AddNewStocks
-            // 
-            this.AddNewStocks.Location = new System.Drawing.Point(736, 443);
-            this.AddNewStocks.Name = "AddNewStocks";
-            this.AddNewStocks.Size = new System.Drawing.Size(137, 43);
-            this.AddNewStocks.TabIndex = 6;
-            this.AddNewStocks.Text = "Add New Stocks";
-            this.AddNewStocks.UseVisualStyleBackColor = true;
-            this.AddNewStocks.Click += new System.EventHandler(this.AddNewStocks_Click);
-            // 
-            // stocksBindingSource
-            // 
-            this.stocksBindingSource.DataMember = "Stocks";
-            // 
-            // Refreshbutton
-            // 
-            this.Refreshbutton.Location = new System.Drawing.Point(535, 443);
-            this.Refreshbutton.Name = "Refreshbutton";
-            this.Refreshbutton.Size = new System.Drawing.Size(137, 43);
-            this.Refreshbutton.TabIndex = 9;
-            this.Refreshbutton.Text = "Refresh";
-            this.Refreshbutton.UseVisualStyleBackColor = true;
-            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
-            // 
-            // productsDataSet
-            // 
-            this.productsDataSet.DataSetName = "ProductsDataSet";
-            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsDataSetBindingSource
-            // 
-            this.productsDataSetBindingSource.DataSource = this.productsDataSet;
-            this.productsDataSetBindingSource.Position = 0;
-            // 
-            // stockDataBaseFixed
-            // 
-            this.stockDataBaseFixed.DataSetName = "StockDataBaseFixed";
-            this.stockDataBaseFixed.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stocksBindingSource3
-            // 
-            this.stocksBindingSource3.DataMember = "Stocks";
-            this.stocksBindingSource3.DataSource = this.stockDataBaseFixed;
-            // 
-            // stocksTableAdapter1
-            // 
-            this.stocksTableAdapter1.ClearBeforeFill = true;
+            this.StocksGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.StocksGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -297,11 +278,73 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Stock";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
+            // stocksBindingSource3
+            // 
+            this.stocksBindingSource3.DataMember = "Stocks";
+            this.stocksBindingSource3.DataSource = this.stockDataBaseFixed;
+            // 
+            // stockDataBaseFixed
+            // 
+            this.stockDataBaseFixed.DataSetName = "StockDataBaseFixed";
+            this.stockDataBaseFixed.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // AddNewStocks
+            // 
+            this.AddNewStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewStocks.ForeColor = System.Drawing.Color.Gray;
+            this.AddNewStocks.Image = global::InventorySystem.Properties.Resources.Plus_math_961;
+            this.AddNewStocks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddNewStocks.Location = new System.Drawing.Point(774, 542);
+            this.AddNewStocks.Name = "AddNewStocks";
+            this.AddNewStocks.Size = new System.Drawing.Size(251, 57);
+            this.AddNewStocks.TabIndex = 6;
+            this.AddNewStocks.Text = "Add New Stocks";
+            this.AddNewStocks.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AddNewStocks.UseVisualStyleBackColor = true;
+            this.AddNewStocks.Click += new System.EventHandler(this.AddNewStocks_Click);
+            // 
+            // Refreshbutton
+            // 
+            this.Refreshbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Refreshbutton.ForeColor = System.Drawing.Color.Gray;
+            this.Refreshbutton.Image = global::InventorySystem.Properties.Resources.Refresh;
+            this.Refreshbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Refreshbutton.Location = new System.Drawing.Point(462, 542);
+            this.Refreshbutton.Name = "Refreshbutton";
+            this.Refreshbutton.Size = new System.Drawing.Size(173, 57);
+            this.Refreshbutton.TabIndex = 9;
+            this.Refreshbutton.Text = "Refresh";
+            this.Refreshbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
+            // 
+            // productsDataSet
+            // 
+            this.productsDataSet.DataSetName = "ProductsDataSet";
+            this.productsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsDataSetBindingSource
+            // 
+            this.productsDataSetBindingSource.DataSource = this.productsDataSet;
+            this.productsDataSetBindingSource.Position = 0;
+            // 
+            // stocksTableAdapter1
+            // 
+            this.stocksTableAdapter1.ClearBeforeFill = true;
+            // 
+            // stocksBindingSource2
+            // 
+            this.stocksBindingSource2.DataMember = "Stocks";
+            // 
+            // stocksBindingSource
+            // 
+            this.stocksBindingSource.DataMember = "Stocks";
+            // 
             // Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 524);
+            this.ClientSize = new System.Drawing.Size(1173, 704);
             this.Controls.Add(this.Refreshbutton);
             this.Controls.Add(this.AddNewStocks);
             this.Controls.Add(this.StocksGridView);
@@ -315,13 +358,13 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StocksGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockDataBaseFixed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockDataBaseFixed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,5 +411,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label3;
     }
 }

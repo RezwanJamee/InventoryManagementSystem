@@ -154,6 +154,7 @@
             this.Controls.Add(this.AddVendorNameTextBox);
             this.Name = "StocksAdd";
             this.Text = "StocksAdd";
+            this.Load += new System.EventHandler(this.StocksAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
