@@ -26,6 +26,11 @@ namespace InventorySystem
         Int32 ExpectedStocksCount;
 
         [SetUp]
+        /* Open test database. 
+         * Setup all the class and variable declaration and initialisation. 
+         * Some sql commands we tested are customer, login, products and stocks.
+         * Finally close test database. 
+         */
         public void Setup()
         {
             _TestDatabase_conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CI_TestDataBase.mdf;Integrated Security=True;Connect Timeout=30");
@@ -63,6 +68,8 @@ namespace InventorySystem
             _TestDatabase_conn.Close();
         }
 
+        /* Test: Test counting the number of the customers in database.
+         */
         [Test]
         public void TestCustomersCountInTable()
         {
@@ -73,13 +80,13 @@ namespace InventorySystem
             TestCommandCustomer.Connection = _InventoryDatabase_conn;
             Int32 ActualCustomersCount = (Int32)TestCommandCustomer.ExecuteScalar();
             
-
             _InventoryDatabase_conn.Close();
 
-
             Assert.AreEqual(ExpectedCustomersCount, ActualCustomersCount);
-
         }
+
+        /* Test: The Login class with inserting date.
+         */
         [Test]
         public void TestLoginTable()
         {
@@ -90,14 +97,13 @@ namespace InventorySystem
             TestCommandLogin.Connection = _InventoryDatabase_conn;
             Int32 ActualloginsCount = (Int32)TestCommandLogin.ExecuteScalar();
 
-
             _InventoryDatabase_conn.Close();
 
-
             Assert.AreEqual(ExpectedLoginsCount, ActualloginsCount);
-
         }
 
+        /* Test: Test products table database.
+         */
         [Test]
         public void TestProductsTable()
         {
@@ -108,13 +114,13 @@ namespace InventorySystem
             TestCommandProducts.Connection = _InventoryDatabase_conn;
             Int32 ActualProductsCount = (Int32)TestCommandProducts.ExecuteScalar();
 
-
             _InventoryDatabase_conn.Close();
-
 
             Assert.AreEqual(ExpectedProductsCount, ActualProductsCount);
         }
 
+        /* Test: Test vendors table database.
+         */
         [Test]
         public void TestVendorsTable()
         {
@@ -125,13 +131,13 @@ namespace InventorySystem
             TestCommandVendors.Connection = _InventoryDatabase_conn;
             Int32 ActualVendorsCount = (Int32)TestCommandVendors.ExecuteScalar();
 
-
             _InventoryDatabase_conn.Close();
-
 
             Assert.AreEqual(ExpectedVendorsCount, ActualVendorsCount);
         }
 
+        /* Test: Test stocks table database.
+         */
         [Test]
         public void TestStocksTable()
         {
@@ -142,9 +148,7 @@ namespace InventorySystem
             TestCommandStocks.Connection = _InventoryDatabase_conn;
             Int32 ActualStocksCount = (Int32)TestCommandStocks.ExecuteScalar();
 
-
             _InventoryDatabase_conn.Close();
-
 
             Assert.AreEqual(ExpectedStocksCount, ActualStocksCount);
         }
