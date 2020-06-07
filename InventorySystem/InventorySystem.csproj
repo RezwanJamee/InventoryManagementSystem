@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{94E8DF74-EBEF-49F9-9C03-7B2A99A17F38}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>InventorySystem</RootNamespace>
+    <AssemblyName>InventorySystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CI_TestDataBaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CI_TestDataBaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CI_Tests.cs" />
+    <Compile Include="CustomersAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersAdd.Designer.cs">
+      <DependentUpon>CustomersAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerTable.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers.Designer.cs">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Credentials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Credentials.Designer.cs">
+      <DependentUpon>Edit_Credentials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graphs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphs.Designer.cs">
+      <DependentUpon>Graphs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductsAdd.Designer.cs">
+      <DependentUpon>ProductsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsTable.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockDataBaseFixed.cs">
+      <DependentUpon>StockDataBaseFixed.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StockDataBaseFixed.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockDataBaseFixed.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StocksAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StocksAdd.Designer.cs">
+      <DependentUpon>StocksAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocksDataSet.cs">
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StocksDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Test_DatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Test_DatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VendorAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorAdd.Designer.cs">
+      <DependentUpon>VendorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stocks.Designer.cs">
+      <DependentUpon>Stocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vendors.Designer.cs">
+      <DependentUpon>Vendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendorsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VendorsUpdated.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VendorsUpdated.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Edit_Credentials.resx">
+      <DependentUpon>Edit_Credentials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphs.resx">
+      <DependentUpon>Graphs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductsAdd.resx">
+      <DependentUpon>ProductsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocksAdd.resx">
+      <DependentUpon>StocksAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorAdd.resx">
+      <DependentUpon>VendorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomersAdd.resx">
+      <DependentUpon>CustomersAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Stocks.resx">
+      <DependentUpon>Stocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vendors.resx">
+      <DependentUpon>Vendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CI_TestDataBaseDataSet.xsc">
+      <DependentUpon>CI_TestDataBaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CI_TestDataBaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CI_TestDataBaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CI_TestDataBaseDataSet.xss">
+      <DependentUpon>CI_TestDataBaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CustomersDataSet.xsc">
+      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CustomersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CustomersDataSet.xss">
+      <DependentUpon>CustomersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CustomerTable.xsc">
+      <DependentUpon>CustomerTable.xsd</DependentUpon>
+    </None>
+    <None Include="CustomerTable.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerTable.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CustomerTable.xss">
+      <DependentUpon>CustomerTable.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="ProductsDataSet1.xsc">
+      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProductsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductsDataSet1.xss">
+      <DependentUpon>ProductsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ProductsTable.xsc">
+      <DependentUpon>ProductsTable.xsd</DependentUpon>
+    </None>
+    <None Include="ProductsTable.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductsTable.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductsTable.xss">
+      <DependentUpon>ProductsTable.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="StockDataBaseFixed.xsc">
+      <DependentUpon>StockDataBaseFixed.xsd</DependentUpon>
+    </None>
+    <None Include="StockDataBaseFixed.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StockDataBaseFixed.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StockDataBaseFixed.xss">
+      <DependentUpon>StockDataBaseFixed.xsd</DependentUpon>
+    </None>
+    <None Include="StocksDataSet.xsc">
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StocksDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StocksDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StocksDataSet.xss">
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet.xsc">
+      <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Test_DatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Test_DatabaseDataSet.xss">
+      <DependentUpon>Test_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet1.xsc">
+      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Test_DatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Test_DatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Test_DatabaseDataSet1.xss">
+      <DependentUpon>Test_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="VendorsDataSet.xsc">
+      <DependentUpon>VendorsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VendorsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendorsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VendorsDataSet.xss">
+      <DependentUpon>VendorsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VendorsUpdated.xsc">
+      <DependentUpon>VendorsUpdated.xsd</DependentUpon>
+    </None>
+    <None Include="VendorsUpdated.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VendorsUpdated.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VendorsUpdated.xss">
+      <DependentUpon>VendorsUpdated.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin Img.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomersIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogOutIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductsIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StockIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VendorsIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VendorWithImage.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StockedProductWithImage.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomerWithImage.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Coverimage-inventory-management-system.png" />
+    <None Include="Resources\Coverimage-inventory-management-system1.png" />
+    <None Include="Resources\Edit icon.png" />
+    <None Include="Resources\Hot-sales-hours-96.png" />
+    <None Include="Resources\Plus-math-96.png" />
+    <None Include="Resources\Hot-sales-hours-961.png" />
+    <None Include="Resources\Comapny_Logo.png" />
+    <None Include="Resources\Company mark.png" />
+    <None Include="Resources\Plus-math-961.png" />
+    <None Include="Resources\Refresh.png" />
+    <Content Include="CI_TestDataBase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CI_TestDataBase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>CI_TestDataBase.mdf</DependentUpon>
+    </Content>
+    <Content Include="Resources\Search-96.png" />
+    <None Include="Resources\Search-961.png" />
+    <None Include="Resources\Top Saler leaderboard-96.png" />
+    <None Include="Resources\Top squared-96.png" />
+    <None Include="Resources\Top-sort-up-96.png" />
+    <Content Include="Resources\TopProduct.png" />
+    <Content Include="Resources\Top_Saler_leaderboard.png" />
+    <Content Include="Test_Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Test_Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Test_Database.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.16.1\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
