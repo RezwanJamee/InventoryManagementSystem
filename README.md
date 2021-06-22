@@ -13,5 +13,19 @@ The project is based on few pages:
 
 The second last 4 pages interact with the inventory database where you can add, remove, update or delete items from database.
 
-##Tools used in the project:
+### UI preview
+Some of the sample ui are attached below:
+![](images/Loginpage.png)
+<p align="center">Screenshot: Login page
+</p><br>
+
+![](images/Dash.png)
+<p align="center">Screenshot: Dashboard page
+</p><br>
+
+![](images/Customers.png)
+<p align="center">Screenshot: Customers page
+</p><br>
+
+###Tools used in the project:
 C# language, Winform, SQL server and Adobe XD.
